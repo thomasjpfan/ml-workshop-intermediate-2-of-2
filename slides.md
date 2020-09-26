@@ -1,9 +1,9 @@
-title: # Intermediate Machine Learning with scikit-learn: Cross validation, Parameter Tuning, Pandas Interoperability, and Missing Values
+title: # Intermediate Machine Learning with scikit-learn: Evaluation, Calibration, and Inspection
 use_katex: True
 class: title-slide
 
 # Intermediate Machine Learning with scikit-learn
-## Cross validation, Parameter Tuning, Pandas Interoperability, and Missing Values
+## Evaluation, Calibration, and Inspection
 
 ![](images/scikit-learn-logo-notext.png)
 
