@@ -1,4 +1,5 @@
-# Intermediate Machine Learning with scikit-learn: Evaluation, Calibration, and Inspection
+# Intermediate Machine Learning with scikit-learn
+### Evaluation, Calibration, and Inspection
 
 *By Thomas J. Fan*
 
