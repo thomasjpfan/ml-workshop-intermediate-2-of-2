@@ -41,7 +41,7 @@ To download and install the dependencies run:
 conda env create -f environment.yml
 ```
 
-This will install a virtual environment. To activate the environment:
+This will create a virtual environment named `ml-workshop-intermediate-2-of-2`. To activate the environment:
 
 ```bash
 conda activate ml-workshop-intermediate-2-of-2
