@@ -21,20 +21,20 @@ body {
 .remark-slide-content h1 {
     font-weight: bold;
     font-size: 1.7em;
-    margin: .1em 0 .5em 0;
+    margin: .1em 0;
     color: #520b92;
 }
 
 .remark-slide-content h2 {
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-weight: bold;
-    margin: 0 0 .5em 0;
+    margin: .25em 0;
 }
 
 .remark-slide-content h3 {
     font-size: 1.1em;
     font-weight: normal;
-    margin: 0 0 .5em 0;
+    margin: .25em 0;
 }
 
 .remark-slide-number {

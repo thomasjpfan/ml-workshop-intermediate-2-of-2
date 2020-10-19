@@ -20,10 +20,16 @@ name: table-of-contents
 class: middle, larger
 
 # Table of Contents
-
+.g[
+.g-6[
 1. [Model Evaluation](#evaluation)
 1. [Model Calibration](#calibration)
 1. [Model Inspection](#inspection)
+]
+.g-6.g-center[
+![](images/scikit-learn-logo-notext.png)
+]
+]
 
 ---
 
@@ -32,9 +38,34 @@ class: chapter-slide
 
 # 1. Model Evaluation
 
-.footnote-back[
+.footnote[
 [Back to Table of Contents](#table-of-contents)
 ]
+
+???
+
+- classification models
+- confusion matrix
+- positive and negative
+- accuracy?
+- precision, recall, f-score
+- averaging strategies
+- balanced accuracy
+- Goal setting
+- precision-recall curve
+- roc curve
+- compare models
+- average precision
+- threshold metrics vs ranking
+- multi-class
+- notebook
+
+---
+
+- Regression metrics
+- cross_val_score
+
+- scoring interface
 
 ---
 
@@ -43,9 +74,17 @@ class: chapter-slide
 
 # 2. Model Calibration
 
-.footnote-back[
+.footnote[
 [Back to Table of Contents](#table-of-contents)
 ]
+
+???
+
+- What is calibration
+- Calibrated vs non calibrated
+- calibration curves
+- calibration in scikit-learn
+
 
 ---
 
@@ -54,9 +93,18 @@ class: chapter-slide
 
 # 3. Model Inspection
 
-.footnote-back[
+.footnote[
 [Back to Table of Contents](#table-of-contents)
 ]
+
+???
+
+- linear models for classification
+- linear models for regression
+- tree based models
+- gradient boosting
+- permutation importance
+- partial dependence
 
 ---
 
