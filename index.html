@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title># Intermediate Machine Learning with scikit-learn: Evaluation, Calibration, and Inspection</title>
+  <title>Intermediate Machine Learning with scikit-learn: Evaluation, Calibration, and Inspection</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" href="./assets/style.css">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <textarea id="source">title: # Intermediate Machine Learning with scikit-learn: Evaluation, Calibration, and Inspection
+  <textarea id="source">title: Intermediate Machine Learning with scikit-learn: Evaluation, Calibration, and Inspection
 use_katex: True
 class: title-slide
 
@@ -36,10 +36,16 @@ name: table-of-contents
 class: middle, larger
 
 # Table of Contents
-
+.g[
+.g-6[
 1. [Model Evaluation](#evaluation)
 1. [Model Calibration](#calibration)
 1. [Model Inspection](#inspection)
+]
+.g-6.g-center[
+![](images/scikit-learn-logo-notext.png)
+]
+]
 
 ---
 
@@ -52,6 +58,31 @@ class: chapter-slide
 [Back to Table of Contents](#table-of-contents)
 ]
 
+???
+
+- classification models
+- confusion matrix
+- positive and negative
+- accuracy?
+- precision, recall, f-score
+- averaging strategies
+- balanced accuracy
+- Goal setting
+- precision-recall curve
+- roc curve
+- compare models
+- average precision
+- threshold metrics vs ranking
+- multi-class
+- notebook
+
+---
+
+- Regression metrics
+- cross_val_score
+
+- scoring interface
+
 ---
 
 name: calibration
@@ -63,6 +94,14 @@ class: chapter-slide
 [Back to Table of Contents](#table-of-contents)
 ]
 
+???
+
+- What is calibration
+- Calibrated vs non calibrated
+- calibration curves
+- calibration in scikit-learn
+
+
 ---
 
 name: inspection
@@ -73,6 +112,15 @@ class: chapter-slide
 .footnote-back[
 [Back to Table of Contents](#table-of-contents)
 ]
+
+???
+
+- linear models for classification
+- linear models for regression
+- tree based models
+- gradient boosting
+- permutation importance
+- partial dependence
 
 ---
 
@@ -103,8 +151,9 @@ This workshop on Github: github.com/thomasjpfan/ml-workshop-intermediate-2-of-2<
     var options = {
       ratio: '16:9',
       highlightLanguage: "python",
-      highlightStyle: "monokai",
+      highlightStyle: "github",
       highlightLines: true,
+      highlightSpans: true,
       slideNumberFormat: '',
     };
     remark.macros['scale'] = function (percentage) {

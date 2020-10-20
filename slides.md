@@ -1,4 +1,4 @@
-title: # Intermediate Machine Learning with scikit-learn: Evaluation, Calibration, and Inspection
+title: Intermediate Machine Learning with scikit-learn: Evaluation, Calibration, and Inspection
 use_katex: True
 class: title-slide
 
@@ -38,7 +38,7 @@ class: chapter-slide
 
 # 1. Model Evaluation
 
-.footnote[
+.footnote-back[
 [Back to Table of Contents](#table-of-contents)
 ]
 
@@ -74,7 +74,7 @@ class: chapter-slide
 
 # 2. Model Calibration
 
-.footnote[
+.footnote-back[
 [Back to Table of Contents](#table-of-contents)
 ]
 
@@ -93,7 +93,7 @@ class: chapter-slide
 
 # 3. Model Inspection
 
-.footnote[
+.footnote-back[
 [Back to Table of Contents](#table-of-contents)
 ]
 
