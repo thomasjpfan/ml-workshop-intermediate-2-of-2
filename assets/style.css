@@ -16,36 +16,38 @@ body {
 .remark-slide-content {
     font-size: 1em;
     border-top: solid 5px #520b92;
+    padding-top: 0.5em;
 }
 
 .remark-slide-content h1 {
     font-weight: bold;
-    font-size: 1.7em;
-    margin: .1em 0;
+    font-size: 1.9em;
+    margin: .2em 0;
     color: #520b92;
 }
 
 .remark-slide-content h2 {
-    font-size: 1.2em;
+    font-size: 1.6em;
     font-weight: bold;
-    margin: .25em 0;
+    margin: .2em 0;
 }
 
 .remark-slide-content h3 {
-    font-size: 1em;
+    font-size: 1.3em;
     font-weight: bold;
-    margin: .25em 0;
+    margin: .2em 0;
 }
 
+.remark-slide-content p,
+.remark-slide-content ul,
+.remark-slide-content ol {
+    font-size: 1.2em;
+    margin: .2em 0;
+}
 .remark-slide-number {
     font-size: 0.5em;
     bottom: 2em;
 }
-
-.remark-slide-content {
-  font-size: 1.2em;
-}
-
 
 /* Styles ------------------------------------------------------------------- */
 
@@ -166,14 +168,15 @@ ul > li > ul > li {
     padding: 1em;
 }
 
-.hljs-monokai .hljs-comment {
-    color: #a18e35;
+.hljs-github .hljs-comment {
+    color: #520b92;
 }
+
 
 /* Specials ----------------------------------------------------------------- */
 
 .title-slide {
-    font-size: 1.2em;
+    font-size: 1.1em;
     text-align: center;
     vertical-align: middle;
 }
@@ -361,7 +364,7 @@ blockquote cite{
   flex-direction: row;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin: 1rem -1rem;
+  margin: 0.5rem -0.5rem;
 }
 
 .g-1
@@ -380,8 +383,8 @@ blockquote cite{
   -ms-flex: 0 0 auto;
   -webkit-box-flex: 0;
   flex: 0 0 auto;
-  padding-right: 1rem;
-  padding-left: 1rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
 }
 
 .g-1 {
