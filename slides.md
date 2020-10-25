@@ -672,15 +672,213 @@ class: chapter-slide
 .footnote-back[
 [Back to Table of Contents](#table-of-contents)
 ]
+---
 
-???
+class: middle
 
-- linear models for classification
-- linear models for regression
-- tree based models
-- gradient boosting
-- permutation importance
-- partial dependence
+# Post-hoc Model Interpretation
+
+- Not inference
+- Not causality
+- Explaining the model != explaining the data
+- Model inspection only tells you about the model
+- Useful only if the model is good
+
+---
+
+class: middle
+
+# Post-hoc Model Interpretation
+
+## Inspection based on model
+- Interpreting the coefficients in a linear model: `coef_`
+- `feature_importances_` of a random forest
+
+## Model-agnostic
+- Permutation importance
+- Partial dependence curves
+
+---
+
+class: chapter-slide
+
+# Notebook 📕!
+## notebooks/03-model-inspection.ipynb
+
+---
+
+# Permutation Feature Importance 👑 (Pt 1)
+
+```py
+X_train = [[0, 1, 2],
+           [1, 2, 3],
+           [2, 1, 4],
+           [3, 1, 9],
+           [4, 3, 1]]
+y_train = [1, 0, 1, 1, 0]
+
+model.f!t(X_train, y_train)
+model.score(X_train, y_train)
+# 0.90
+```
+
+---
+
+# Permutation Feature Importance 👑 (Pt 2)
+
+```py
+X_train_perm_1 = [
+    [1, 1, 2],
+    [0, 2, 3],
+    [2, 1, 4],
+    [4, 1, 9],
+    [3, 3, 1]
+]
+model.score(X_train_perm_1, y_train)
+# 0.70
+```
+
+---
+
+# Permutation Feature Importance 👑 (Pt 3)
+
+```py
+X_train_perm_2 = [
+    [1, 1, 2],
+    [3, 2, 3],
+    [4, 1, 4],
+    [2, 1, 9],
+    [0, 3, 1]
+]
+model.score(X_train_perm_1, y_train)
+# 0.73
+```
+
+---
+
+# Permutation Feature Importance 👑 (Pt 4)
+
+```py
+model.score(X_train_perm_3, y_train)
+# 0.80
+```
+
+- Remember: `model.score(X_train, y_train) = 0.90`
+- permutation feature importance for the 1st feature:
+
+```py
+[0.90 - 0.70, 0.90 - 0.73, 0.90 - 0.80]
+# [0.20, 0.17, 0.10]
+```
+
+---
+
+# Permutation Feature Importance 👑 (Pt 5)
+
+```py
+from sklearn.inspection import permutation_importance
+
+result = permutation_importance(model, X, y, n_repeats=3)
+
+result['importances']
+# [[0.20, 0.17, 0.10], [0.5, 0.4, 0.6], ...]
+result['importances_mean']
+# [ 0.157, 0.5, ...]
+result['importances_std']
+# [0.0419 0.0816, ...])
+```
+
+---
+
+# Partial Dependence Plots (Pt 1)
+
+```py
+X_train = [
+    [0, 1, 2],
+    [1, 2, 3],
+    [2, 4, 4],
+    [3, 1, 9],
+    [4, 3, 1]
+]
+y_train = [0.1, 0.2, 0.3, 0.4, 0.5]
+
+model.fit(X_train, y_train)
+```
+
+---
+
+# Partial Dependence Plots (Pt 2)
+
+```py
+X_train_0 = [
+    [0, 1, 2],
+    [0, 2, 3],
+    [0, 4, 4],
+    [0, 1, 9],
+    [0, 3, 1]
+]
+model.predict(X_train_0).mean()
+# 0.1
+```
+
+---
+
+# Partial Dependence Plots (Pt 3)
+
+```py
+X_train_1 = [
+    [1, 1, 2],
+    [1, 2, 3],
+    [1, 4, 4],
+    [1, 1, 9],
+    [1, 3, 1]
+]
+model.predict(X_train_1).mean()
+# 0.24
+```
+
+---
+
+# Partial Dependence Plots (Pt 4)
+
+.g[
+.g-6[
+```py
+model.predit(X_train_0).mean()
+# 0.1
+
+model.predit(X_train_1).mean()
+# 0.24
+
+model.predit(X_train_2).mean()
+# 0.5
+
+...
+```
+]
+.g-6[
+![:scale 100%](notebooks/images/partial_dependence_example.png)
+]
+]
+
+---
+
+# Partial Dependence Plots in scikit-learn
+
+```py
+from sklearn.inspection import plot_partial_dependence
+
+plot_partial_dependence(estimator, X, features)
+```
+
+![:scale 65%](notebooks/images/partial_dependence_multiple.png)
+
+---
+
+class: chapter-slide
+
+# Notebook 📘!
+## notebooks/03-model-inspection.ipynb
 
 ---
 
