@@ -475,13 +475,6 @@ from sklearn.metrics import median_absolute_error
 
 ---
 
-- Regression metrics
-- cross_val_score
-
-- scoring interface
-
----
-
 # Metrics Covered Today
 
 ## Classification
@@ -540,10 +533,10 @@ class: chapter-slide
 
 .g[
 .g-6[
-![:scale 100%](images/prob_table.png)
+![:scale 100%](images/calibration-classifier.svg)
 ]
 .g-6[
-![:scale 100%](images/calib_curve.png)
+![:scale 100%](images/caligration_classifier.png)
 ]
 ]
 
