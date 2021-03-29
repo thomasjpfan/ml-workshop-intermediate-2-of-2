@@ -1,10 +1,9 @@
 name: ml-workshop-intermediate-2-of-2
 channels:
   - conda-forge
-  - defaults
 dependencies:
-  - python=3.8
-  - scikit-learn=0.23.*
+  - python=3.8.*
+  - scikit-learn=0.24.*
   - seaborn=0.11.*
-  - pandas=1.1.*
-  - jupyterlab=2.2.*
+  - pandas=1.2.*
+  - jupyterlab=3.0.*
