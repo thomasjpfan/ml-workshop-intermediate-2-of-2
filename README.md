@@ -27,9 +27,11 @@ git pull origin master
 
 If you are not familiar with git, you can download this repository as a zip file at: [github.com/thomasjpfan/ml-workshop-intermediate-2-of-2/archive/master.zip](https://github.com/thomasjpfan/ml-workshop-intermediate-2-of-2/archive/master.zip). Please note that I may add and improve the material until shortly before the session. To update your copy please re-download the material a day before the session.
 
-## Installation
+## Running the notebooks
 
-This workshop requires `conda` to be installed on your local machine. The simplest way to install `conda` is to install `miniconda` by using an installer for your operating system provided at [docs.conda.io/en/latest/miniconda.html](https://docs.conda.io/en/latest/miniconda.html). After `conda` is installed, navigate to this repository on your local machine:
+### Local Installation
+
+Local installation requires `conda` to be installed on your machine. The simplest way to install `conda` is to install `miniconda` by using an installer for your operating system provided at [docs.conda.io/en/latest/miniconda.html](https://docs.conda.io/en/latest/miniconda.html). After `conda` is installed, navigate to this repository on your local machine:
 
 ```bash
 cd ml-workshop-intermediate-2-of-2
@@ -54,6 +56,16 @@ jupyter lab
 ```
 
 This should open a browser window with the `jupterlab` interface.
+
+### Run with Google's Colab
+
+If you have any issues with installing `conda` or running `jupyter` on your local computer, then you can run the notebooks on Google's Colab:
+
+0. [Quick Review of scikit-learn](https://colab.research.google.com/github/thomasjpfan/ml-workshop-intermediate-1-of-2/blob/master/notebooks/00-review-sklearn.ipynb)
+1. [Cross-Validation in scikit-learn](https://colab.research.google.com/github/thomasjpfan/ml-workshop-intermediate-1-of-2/blob/master/notebooks/01-cross-validation.ipynb)
+2. [Parameter tuning](https://colab.research.google.com/github/thomasjpfan/ml-workshop-intermediate-1-of-2/blob/master/notebooks/02-parameter-tuning.ipynb)
+3. [Missing values in scikit-learn](https://colab.research.google.com/github/thomasjpfan/ml-workshop-intermediate-1-of-2/blob/master/notebooks/03-missing-values.ipynb)
+4. [Pandas Interoperability](https://colab.research.google.com/github/thomasjpfan/ml-workshop-intermediate-1-of-2/blob/master/notebooks/04-pandas-interoperability.ipynb)
 
 ## License
 
