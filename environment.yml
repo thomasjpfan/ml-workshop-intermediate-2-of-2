@@ -1,6 +1,7 @@
 name: ml-workshop-intermediate-2-of-2
 channels:
   - conda-forge
+  - nodefaults
 dependencies:
   - python=3.9.7
   - scikit-learn=1.0.*
