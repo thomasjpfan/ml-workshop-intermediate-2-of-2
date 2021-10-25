@@ -61,11 +61,9 @@ This should open a browser window with the `jupterlab` interface.
 
 If you have any issues with installing `conda` or running `jupyter` on your local computer, then you can run the notebooks on Google's Colab:
 
-0. [Quick Review of scikit-learn](https://colab.research.google.com/github/thomasjpfan/ml-workshop-intermediate-1-of-2/blob/master/notebooks/00-review-sklearn.ipynb)
-1. [Cross-Validation in scikit-learn](https://colab.research.google.com/github/thomasjpfan/ml-workshop-intermediate-1-of-2/blob/master/notebooks/01-cross-validation.ipynb)
-2. [Parameter tuning](https://colab.research.google.com/github/thomasjpfan/ml-workshop-intermediate-1-of-2/blob/master/notebooks/02-parameter-tuning.ipynb)
-3. [Missing values in scikit-learn](https://colab.research.google.com/github/thomasjpfan/ml-workshop-intermediate-1-of-2/blob/master/notebooks/03-missing-values.ipynb)
-4. [Pandas Interoperability](https://colab.research.google.com/github/thomasjpfan/ml-workshop-intermediate-1-of-2/blob/master/notebooks/04-pandas-interoperability.ipynb)
+1. [Model Evaluation](https://colab.research.google.com/github/thomasjpfan/ml-workshop-intermediate-2-of-2/blob/master/notebooks/01-model-evaluation.ipynb)
+2. [Model Calibration](https://colab.research.google.com/github/thomasjpfan/ml-workshop-intermediate-2-of-2/blob/master/notebooks/02-model-calibration.ipynb)
+3. [Model Inspection](https://colab.research.google.com/github/thomasjpfan/ml-workshop-intermediate-2-of-2/blob/master/notebooks/03-model-inspection.ipynb)
 
 ## License
 
