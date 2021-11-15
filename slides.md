@@ -141,32 +141,29 @@ $$
 
 # Confusion Matrix in scikit-learn
 
-.g[
-.g-7[
 ```python
 from sklearn.metrics import confusion_matrix
 
 lr = LogisticRegression().fit(X_train, y_train)
 y_pred = lr.predict(X_test)
 
-confusion_matrix(y_test, y_pred)
+*confusion_matrix(y_test, y_pred)
 
 # array([[50,  3],
 #        [ 3, 87]])
 ```
 
-### Plotting the confusion matrix
+---
+
+# Plotting the confusion matrix
 
 ```python
-from sklearn.metrics import plot_confusion_matrix
+from sklearn.metrics import ConfusionMatrixDisplay
 
-plot_confusion_matrix(lr, X_test, y_test)
+*ConfusionMatrixDisplay.from_estimator(lr, X_test, y_test)
 ```
-]
-.g-5[
-![:scale 110%](notebooks/images/confusion_matrix_normal.png)
-]
-]
+
+![:scale 50%](notebooks/images/confusion_matrix_normal.png)
 
 ---
 
@@ -175,7 +172,7 @@ plot_confusion_matrix(lr, X_test, y_test)
 ![:scale 100%](images/wiki-zoo.png)
 
 ### confusion matrix in scikit-learn
-![:scale 30%](notebooks/images/confusion_matrix_normal.png)
+![:scale 25%](notebooks/images/confusion_matrix_normal.png)
 
 ---
 
@@ -191,7 +188,7 @@ plot_confusion_matrix(lr, X_test, y_test)
 ## Precision, Recall, f-score
 
 .g[
-.g-6[
+.g-4[
 $$
 \text{precision} = \frac{TP}{TP + FP}
 $$
@@ -204,7 +201,7 @@ $$
 \text{F} = 2 \frac{\text{precision}\cdot\text{recall}}{\text{precision} + \text{recall}}
 $$
 ]
-.g-6[
+.g-8[
 ![:scale 100%](notebooks/images/confusion_matrix.png)
 ]
 ]
@@ -384,8 +381,9 @@ $$
 # Precision recall curve
 
 ```py
-from sklearn.metrics import plot_precision_recall_curve
-plot_precision_recall_curve(log_reg, X_test, y_test, name="LogisticRegression")
+from sklearn.metrics import PrecisionRecallDisplay
+PrecisionRecallDisplay.from_estimator(
+    log_reg, X_test, y_test, name="LogisticRegression")
 ```
 
 ![:scale 70%](notebooks/images/plot_precision_recall_curve.png)
@@ -407,8 +405,9 @@ $$
 # ROC Curve (Receiver Operating Characteristic)
 
 ```py
-from sklearn.metrics import plot_roc_curve
-plot_roc_curve(log_reg, X_test, y_test, name="LogisticRegression")
+from sklearn.metrics import RocCurveDisplay
+RocCurveDisplay.from_estimator(
+    log_reg, X_test, y_test, name="LogisticRegression")
 ```
 
 .g[
@@ -745,7 +744,7 @@ X_train = [[0, 1, 2],
            [4, 3, 1]]
 y_train = [1, 0, 1, 1, 0]
 
-model.f!t(X_train, y_train)
+model.fit(X_train, y_train)
 model.score(X_train, y_train)
 # 0.90
 ```
@@ -872,13 +871,13 @@ model.predict(X_train_1).mean()
 .g[
 .g-6[
 ```py
-model.predit(X_train_0).mean()
+model.predict(X_train_0).mean()
 # 0.1
 
-model.predit(X_train_1).mean()
+model.predict(X_train_1).mean()
 # 0.24
 
-model.predit(X_train_2).mean()
+model.predict(X_train_2).mean()
 # 0.5
 
 ...
@@ -894,9 +893,10 @@ model.predit(X_train_2).mean()
 # Partial Dependence Plots in scikit-learn
 
 ```py
-from sklearn.inspection import plot_partial_dependence
+from sklearn.inspection import PartialDependenceDisplay
 
-plot_partial_dependence(estimator, X, features)
+PartialDependenceDisplay.from_estimator(
+    estimator, X, features)
 ```
 
 ![:scale 65%](notebooks/images/partial_dependence_multiple.png)

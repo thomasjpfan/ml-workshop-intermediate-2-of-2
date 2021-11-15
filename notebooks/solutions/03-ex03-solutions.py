@@ -1,27 +1,28 @@
-from sklearn.datasets import load_boston
+from sklearn.datasets import fetch_openml
+from sklearn.ensemble import HistGradientBoostingRegressor
 
-boston = load_boston()
+boston = fetch_openml(data_id=531, as_frame=True)
 
 X, y = boston.data, boston.target
 
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, random_state=0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
 
-from sklearn.ensemble import GradientBoostingRegressor
-gb = GradientBoostingRegressor(random_state=0)
+hist_reg = HistGradientBoostingRegressor(random_state=42)
+hist_reg.fit(X_train, y_train)
 
-gb.fit(X_train, y_train)
+hist_reg.score(X_test, y_test)
 
-gb.score(X_train, y_train)
+hist_perm_results = permutation_importance(
+   hist_reg, X_test, y_test, n_repeats=5
+)
 
-plot_importances(gb.feature_importances_, boston.feature_names)
+plot_permutation_importance(hist_perm_results, names=X_train.columns);
 
-gb_perm_results = permutation_importance(gb, X_test, y_test, n_repeats=10, n_jobs=-1)
+hist_top_features_idx = hist_perm_results['importances_mean'].argsort()[-4:]
 
-plot_permutation_importance(gb_perm_results, boston.feature_names)
+hist_top_features = X_train.columns[hist_top_features_idx][::-1]
 
-plot_partial_dependence(gb, X_test, features=["LSTAT", "RM", "DIS", "CRIM"],
-                        feature_names=boston.feature_names, n_cols=2)
-
-plot_partial_dependence(gb, X_test, features=[('LSTAT', 'RM')],
-                        feature_names=boston.feature_names)
+fig, ax = plt.subplots(figsize=(20, 6))
+PartialDependenceDisplay.from_estimator(
+    hist_reg, X_test, hist_top_features, n_cols=4, ax=ax
+);

@@ -1,9 +1,11 @@
-from sklearn.naive_bayes import GaussianNB
+from sklearn.ensemble import HistGradientBoostingClassifier
 
-nb = GaussianNB().fit(X_train, y_train)
+hist = HistGradientBoostingClassifier(random_state=42)
 
-nb_proba = nb.predict_proba(X_test)
+hist.fit(X_train, y_train)
 
-brier_score_loss(y_test, nb_proba[:, 1])
+hist_proba = hist.predict_proba(X_test)
 
-plot_calibration_curve(y_test, nb_proba[:, 1], n_bins=10)
+brier_score_loss(y_test, hist_proba[:, 1])
+
+CalibrationDisplay.from_estimator(hist, X_test, y_test, n_bins=10)
