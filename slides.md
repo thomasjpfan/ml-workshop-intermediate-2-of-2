@@ -534,8 +534,12 @@ class: middle
 # Picking metrics
 
 - Accuracy is only useful for balanced problems
+- What part of the confusion matrix is important to you?
 - Align metrics with your business problem
-- Which classes are important?
+
+<br>
+
+![:scale 100%](images/metrics-business.svg)
 
 ---
 
