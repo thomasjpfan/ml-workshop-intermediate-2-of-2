@@ -12,7 +12,10 @@ class: title-slide
 <a href="https://www.github.com/thomasjpfan" target="_blank"><span class="icon icon-github icon-left"></span></a>
 <a href="https://www.twitter.com/thomasjpfan" target="_blank"><span class="icon icon-twitter"></span></a>
 <a class="this-talk-link", href="https://github.com/thomasjpfan/ml-workshop-intermediate-2-of-2" target="_blank">
-This workshop on Github: github.com/thomasjpfan/ml-workshop-intermediate-2-of-2</a>
+.larger-x[
+github.com/thomasjpfan/ml-workshop-intermediate-2-of-2
+]</a>
+
 
 ---
 
@@ -624,7 +627,7 @@ from sklearn.metrics import brier_score_loss
 ```
 
 $$
-\text{Brier score loss} = \frac{\sum_{i=1}^{n}(\hat{p}(y_i) - y_i)}{n}
+\text{Brier score loss} = \frac{\sum_{i=1}^{n}(\hat{p}(y_i) - y_i)^2}{n}
 $$
 
 ---
