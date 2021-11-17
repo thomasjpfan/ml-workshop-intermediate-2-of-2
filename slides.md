@@ -221,7 +221,7 @@ confusion_matrix(y_true, y_pred,
 .g-6[
 ```py
 confusion_matrix(y_true, y_pred,
-                 normalized='pred)
+                 normalized='pred')
 ```
 ![:scale 100%](notebooks/images/confusion_matrix_norm_pred.png)
 ]
@@ -250,7 +250,8 @@ recall_score(y_true, y_pred, pos_label=0)
 
 $\frac{1}{2}\left(\frac{1}{2} + \frac{1}{3}\right) = \frac{5}{12}$
 ```py
-recall_score(y_true, y_pred, average='macro')
+recall_score(y_true, y_pred,
+             average='macro')
 # 0.416666666
 ```
 Interested in the minority class
@@ -386,7 +387,20 @@ PrecisionRecallDisplay.from_estimator(
     log_reg, X_test, y_test, name="LogisticRegression")
 ```
 
-![:scale 70%](notebooks/images/plot_precision_recall_curve.png)
+.g[
+.g-8[
+![:scale 100%](notebooks/images/plot_precision_recall_curve.png)
+]
+.g-4[
+$$
+\text{precision} = \frac{TP}{TP + FP}
+$$
+
+$$
+\text{recall} = \frac{TP}{TP + FN}
+$$
+]
+]
 
 ---
 
@@ -429,6 +443,13 @@ $$
 # Both Curves
 
 ![:scale 100%](notebooks/images/both_plots.png)
+
+---
+
+class: chapter-slide
+
+# Notebook 📓!
+## notebooks/01-model-evaluation.ipynb
 
 ---
 
