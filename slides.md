@@ -423,8 +423,7 @@ $$
 
 ```py
 from sklearn.metrics import RocCurveDisplay
-RocCurveDisplay.from_estimator(
-    log_reg, X_test, y_test, name="LogisticRegression")
+RocCurveDisplay.from_estimator(log_reg, X_test, y_test, name="LogisticRegression")
 ```
 
 .g[
@@ -923,8 +922,7 @@ model.predict(X_train_2).mean()
 ```py
 from sklearn.inspection import PartialDependenceDisplay
 
-PartialDependenceDisplay.from_estimator(
-    estimator, X, features)
+PartialDependenceDisplay.from_estimator(estimator, X, features)
 ```
 
 ![:scale 65%](notebooks/images/partial_dependence_multiple.png)
