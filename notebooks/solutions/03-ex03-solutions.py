@@ -1,9 +1,9 @@
 from sklearn.datasets import fetch_openml
 from sklearn.ensemble import HistGradientBoostingRegressor
 
-boston = fetch_openml(data_id=531, as_frame=True)
+dataset = fetch_openml(data_id=531, as_frame=True)
 
-X, y = boston.data, boston.target
+X, y = dataset.data, dataset.target
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
 
